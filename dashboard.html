@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Glow Orbs -->
+<div class="bg-orb" style="top:10%; left:10%"></div>
+<div class="bg-orb" style="bottom:10%; right:15%"></div>
+
+<div class="layout">
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+
+    <div class="profile">
+        <img id="profilePic"
+             src="https://wallpapers.com/images/hd/cool-anime-girl-pfp-hu-tao-6cjtrrhyvr2g24ik.jpg"
+             width="80" />
+        <h3 id="userName">Mariya</h3>
+        <p>Daily Planner</p>
+    </div>
+
+    <ul class="menu">
+        <li onclick="showTasks()">📋 Today</li>
+        <li onclick="showHistory()">🗓 All Days</li>
+        <li onclick="showProgress()">📊 Progress</li>
+        <li onclick="logout()">🚪 Logout</li>
+    </ul>
+
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="main">
+
+    <!-- TASK VIEW -->
+    <div id="taskView" class="glass-card wide">
+
+        <h1>My Tasks 📝</h1>
+
+        <input type="date" id="datePicker">
+
+        <div class="input-box">
+            <input id="taskInput" placeholder="Enter your task...">
+
+            <select id="priority">
+                <option value="high">High 🔴</option>
+                <option value="medium">Medium 🟡</option>
+                <option value="low">Low 🟢</option>
+            </select>
+
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <!-- PROGRESS VIEW -->
+    <div id="progressView" class="glass-card wide" style="display:none;">
+
+        <h1>Progress 📊</h1>
+
+        <h2 id="progressPercent">0% Completed</h2>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+        <p id="progressText">0 of 0 tasks done 💪</p>
+
+    </div>
+
+    <!-- HISTORY VIEW -->
+    <div id="historyView" class="glass-card wide" style="display:none;">
+
+        <h1>All Days Tasks 🗓</h1>
+
+        <ul id="historyList"></ul>
+
+    </div>
+
+</div>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    color:white;
+    background:
+        radial-gradient(circle at 20% 20%, #8b5cf6, transparent 40%),
+        radial-gradient(circle at 80% 30%, #22d3ee, transparent 45%),
+        radial-gradient(circle at 50% 80%, #ec4899, transparent 40%),
+        linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    overflow:hidden;
+}
+
+/* ===== FLOATING EMOJIS ===== */
+
+body::before,
+body::after{
+    content: "✨ 💜 🚀 🌸 💫 🔮 ⭐ 🦋";
+    position: fixed;
+    font-size: 40px;
+    opacity: 0.18;
+    filter: blur(3px);
+    pointer-events: none;
+    white-space: nowrap;
+    animation: floatEmojis 30s linear infinite;
+}
+
+body::before{
+    top: 80%;
+    left: -20%;
+}
+
+body::after{
+    top: 40%;
+    left: -30%;
+    animation-duration: 45s;
+}
+
+@keyframes floatEmojis{
+    from{ transform: translateX(0) translateY(0); }
+    to{ transform: translateX(150vw) translateY(-70vh); }
+}
+
+/* ===== GLOW ORBS ===== */
+
+.bg-orb{
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(168,85,247,0.6), transparent 70%);
+    filter: blur(90px);
+    z-index:0;
+}
+
+
+/* ===== CENTER (LOGIN / SIGNUP) ===== */
+
+.center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* ===== LOGIN GLASS CARD ===== */
+
+.login-glass{
+    backdrop-filter: blur(25px);
+    background: rgba(255,255,255,0.12);
+    border-radius: 26px;
+    padding: 40px;
+    width: 340px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 45px rgba(168,85,247,0.6);
+}
+
+.login-glass h2{
+    color: #e9d5ff;
+    margin-bottom: 20px;
+}
+
+.login-glass input{
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+    border:none;
+    margin-bottom:12px;
+}
+
+.login-glass button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7c3aed,#4f46e5);
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.small-text{
+    margin-top:12px;
+    font-size:13px;
+    opacity:0.8;
+}
+
+.small-text a{
+    color:#c4b5fd;
+    text-decoration:none;
+}
+
+/* ===== AVATAR SELECT ===== */
+
+.avatar-row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.avatar-row img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    cursor:pointer;
+    border:2px solid transparent;
+}
+
+.avatar-row img.selected{
+    border:2px solid #c4b5fd;
+    box-shadow:0 0 10px #a855f7;
+}
+
+/* ===== DASHBOARD LAYOUT ===== */
+
+.layout{
+    display:flex;
+    height:100vh;
+    width:100vw;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:230px;
+    padding:20px;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.15);
+    border-right:1px solid rgba(255,255,255,0.2);
+    display:flex;
+    flex-direction:column;
+    z-index:5;
+}
+
+.profile{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.profile img{
+    border-radius:50%;
+    border:2px solid #b983ff;
+}
+
+.menu{
+    list-style:none;
+    padding:0;
+}
+
+.menu li{
+    padding:12px;
+    border-radius:12px;
+    cursor:pointer;
+    margin-bottom:8px;
+}
+
+.menu li:hover{
+    background:rgba(255,255,255,0.15);
+}
+
+/* MAIN */
+
+.main{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+
+/* ===== GLASS CARD ===== */
+
+.glass-card{
+    backdrop-filter:blur(25px);
+    background:rgba(255,255,255,0.15);
+    border-radius:26px;
+    padding:35px;
+    border:1px solid rgba(255,255,255,0.25);
+    box-shadow:0 0 45px rgba(168,85,247,0.6);
+    z-index:3;
+}
+
+
+.glass-card.wide{
+    width:520px;
+    max-width:90%;
+}
+
+h1{
+    color:#e9d5ff;
+    text-align:center;
+}
+
+/* DATE */
+
+#datePicker{
+    width:100%;
+    padding:10px;
+    border-radius:12px;
+    border:none;
+    margin-bottom:12px;
+}
+
+/* INPUT ROW */
+
+.input-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.input-box input{
+    flex:2;
+    padding:12px;
+    border-radius:12px;
+    border:none;
+}
+
+.input-box select{
+    flex:1;
+    padding:12px;
+    border-radius:12px;
+    border:none;
+}
+
+.input-box button{
+    flex:1;
+    background:linear-gradient(135deg,#7c3aed,#4f46e5);
+    border:none;
+    border-radius:12px;
+    color:white;
+}
+
+/* ===== TASK LIST ===== */
+
+#taskList{
+    margin-top:15px;
+    max-height:280px;
+    overflow-y:auto;
+    padding:0;
+}
+
+.task-item{
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,0.18);
+    padding:14px;
+    border-radius:14px;
+    margin-bottom:10px;
+}
+
+.task-item:hover{
+    background:rgba(255,255,255,0.25);
+}
+
+.task-item input{
+    margin-right:10px;
+    transform: scale(1.2);
+}
+
+.task-text{
+    flex:1;
+    cursor:pointer;
+}
+
+.completed{
+    text-decoration:line-through;
+    opacity:0.6;
+}
+
+.high{ border-left:6px solid #ff4d6d; }
+.medium{ border-left:6px solid #facc15; }
+.low{ border-left:6px solid #4ade80; }
+
+.action-btn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:18px;
+    margin-left:8px;
+    cursor:pointer;
+}
+
+/* ===== PROGRESS BAR ===== */
+
+.progress-bar{
+    width:100%;
+    height:16px;
+    background:rgba(255,255,255,0.2);
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+#progressFill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#7c3aed,#22d3ee);
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.layout{
+    position:relative;
+    z-index:1;
+}

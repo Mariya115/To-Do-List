@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily Tasks</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="center">
+
+<div class="glass-card wide">
+<h1>My Tasks 📝</h1>
+
+<input type="date" id="datePicker">
+
+<div class="input-box">
+<input id="taskInput" placeholder="Enter your task...">
+
+<select id="priority">
+<option value="high">High 🔴</option>
+<option value="medium">Medium 🟡</option>
+<option value="low">Low 🟢</option>
+</select>
+
+<button onclick="addTask()">Add</button>
+</div>
+
+<ul id="taskList"></ul>
+
+<button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<script src="todo.js"></script>
+</body>
+</html>
